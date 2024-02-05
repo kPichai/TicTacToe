@@ -11,6 +11,8 @@
  */
 
 import java.util.Scanner;
+import javax.swing.*;
+import java.awt.*;
 
 public class TicTacToe
 {
@@ -31,7 +33,7 @@ public class TicTacToe
                                 // following the win direction final variables above
     private int winIndex;       // Provides the index of the row/col of the win
     private int turn;
-
+    private TicTacToeViewer window;
     private Square[][] board;
     private boolean isGameOver;
 
@@ -49,6 +51,8 @@ public class TicTacToe
                 this.board[row][col] = new Square(row, col);
             }
         }
+
+        window = new TicTacToeViewer(this);
 
         // Initialize winning stats variables
         this.isGameOver = false;
@@ -110,11 +114,12 @@ public class TicTacToe
         // Loop until there is a winner or no more turns
         while(!this.checkWin() && this.checkTurn()) {
             this.printBoard();
+            window.repaint();
             System.out.println("Enter your Row Pick:" );
             int row = input.nextInt();
             System.out.println("Enter your Col Pick:" );
             int col = input.nextInt();
-            if(this.pickLocation(row, col)) {
+            if (this.pickLocation(row, col)) {
                 this.takeTurn(row, col);
             } else {
                 System.out.println("That space is taken, or you entered an invalid row/col");
@@ -122,6 +127,7 @@ public class TicTacToe
         }
 
         this.printBoard();
+        window.repaint();
         this.isGameOver = true;
 
         // Determine if there was a winner
