@@ -76,9 +76,9 @@ public class Square {
                 g.fillRect(250 + col*166 + 4*col, 247 + row*166 + 4*row + 24, 159, 166);
             }
             else {
-                g.drawRect(247 + col*166 + 4*col, 247 + row*166 + 4*row + 24, 166, 166);
+                g.drawRect(246 + col*166 + 4*col, 246 + row*166 + 4*row + 24, 166, 166);
                 g.setColor(Color.green);
-                g.fillRect(247 + col*166 + 4*col, 247 + row*166 + 4*row + 24, 166, 166);
+                g.fillRect(246 + col*166 + 4*col, 246 + row*166 + 4*row + 24, 166, 166);
             }
         }
         if (getMarker().equals("X")) {
