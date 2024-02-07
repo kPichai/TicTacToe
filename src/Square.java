@@ -62,14 +62,29 @@ public class Square {
 
     public void draw(Graphics g, TicTacToeViewer t) {
         if (isWinningSquare) {
-            g.drawRect(250 + col*167 + 6*col, 250 + row*167 + 6*row + 22, 161, 161);
-            g.setColor(Color.green);
-            g.fillRect(250 + col*167 + 6*col, 250 + row*167 + 6*row + 22, 161, 161);
+            if (col == 1 && row == 1) {
+                g.drawRect(250 + col*166 + 4*col, 250 + row*166 + 4*row + 24, 159, 159);
+                g.setColor(Color.green);
+                g.fillRect(250 + col*166 + 4*col, 250 + row*166 + 4*row + 24, 159, 159);
+            } else if (row == 1) {
+                g.drawRect(247 + col*166 + 4*col, 250 + row*166 + 4*row + 24, 166, 159);
+                g.setColor(Color.green);
+                g.fillRect(247 + col*166 + 4*col, 250 + row*166 + 4*row + 24, 166, 159);
+            } else if (col == 1) {
+                g.drawRect(250 + col*166 + 4*col, 247 + row*166 + 4*row + 24, 159, 166);
+                g.setColor(Color.green);
+                g.fillRect(250 + col*166 + 4*col, 247 + row*166 + 4*row + 24, 159, 166);
+            }
+            else {
+                g.drawRect(247 + col*166 + 4*col, 247 + row*166 + 4*row + 24, 166, 166);
+                g.setColor(Color.green);
+                g.fillRect(247 + col*166 + 4*col, 247 + row*166 + 4*row + 24, 166, 166);
+            }
         }
         if (getMarker().equals("X")) {
-            g.drawImage(X_O[0], 250 + col*167 + 6*col, 250 + row*167 + 6*row + 22, 155, 155, t);
+            g.drawImage(X_O[0], 250 + col*166 + 6*col, 250 + row*166 + 6*row + 24, 155, 155, t);
         } else {
-            g.drawImage(X_O[1], 250 + col*167 + 6*col, 250 + row*167 + 6*row + 22, 155, 155, t);
+            g.drawImage(X_O[1], 250 + col*166 + 6*col, 250 + row*166 + 6*row + 24, 155, 155, t);
         }
     }
     /**

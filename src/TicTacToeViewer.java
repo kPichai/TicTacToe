@@ -46,7 +46,7 @@ public class TicTacToeViewer extends JFrame {
         if (t.getGameOver() && t.checkTie()) {
             g.setFont(new Font("Serif", Font.BOLD, 30));
             g.setColor(Color.BLACK);
-            g.drawString("It's a tie!", 375, 830);
+            g.drawString("It's a tie!", 435, 820);
         }
     }
 }
